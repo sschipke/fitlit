@@ -21,14 +21,19 @@ const sampleDate = '2019/08/29'
 $('.header__div-userName').text(`${user.getUserFirstName()}`);
 $('.header__div__user-stepgoal').text(`${user.dailyStepGoal}`);
 $('.header__div__allusers-stepgoal').text(`${repo.getAllUsersAvgStepGoal()}`);
+$('.header__div__container__avg--steps').text(activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'numSteps'));
+$('.header__div__container__avg--sleep').text(sleepRepo.getAvgSleepStatsAllUsers(sleepRepo.data, 'hoursSlept'));
+$('.header__div__container__avg--hydration').text(hydroRepo.getAvgAllUsers());
 $('.hydration__container--consumed--today').text(`${userHydro.userHydrationByDate(sampleDate)}`);
 
 userHydro.getHydroArray(sampleDate)
 
 $('.hydration__container--consumed--this--week').text(`${userHydro.getWeeklyHydroAvg()}`);
 $('.main__hydration__average--all-users').text(`${hydroRepo.getAvgAllUsers()}`)
-$('.sleep__container--hours--today').text(`${sleepyPerson.getStatsFromDay(sampleDate, 'hoursSlept')}`)
-$('.sleep__container--hours--this--week').text(`${sleepyPerson.getWeeklyAvg(sampleDate, 'hoursSlept')}`)
+$('.sleep__container--hours--today').text(`${sleepyPerson.getStatsFromDay(sampleDate, 'hoursSlept')}`);
+$('.sleep__container--hours--this--week').text(`${sleepyPerson.getWeeklyAvg(sampleDate, 'hoursSlept')}`);
+$('.sleep__container--quality--today').text(sleepyPerson.getStatsFromDay(sampleDate, 'sleepQuality'));
+$('.sleep__container--quality--this--week ').text(sleepyPerson.getWeeklyAvg(sampleDate, 'sleepQuality'));
 
 $('.sleep__container--hours--all--users').text(
   sleepRepo.getAvgSleepStatsAllUsers(sleepRepo.getWeekOfUsers(sampleDate), 'hoursSlept'))
