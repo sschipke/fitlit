@@ -3,12 +3,7 @@
 }
 
 html {
-   /* background: url("./src/images/abstract-design-diagonal-2387532.jpg") no-repeat;  */
   background-color: black;
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
 }
 
 
@@ -297,6 +292,11 @@ article {
   margin-top: 15px;
   margin-bottom: -15px;
 }
+.main__trends__article {
+  text-align: center;
+}
+
+/* *************************Media Query********************************/
 
 @media screen and (max-width: 900px) {
   .header__div,
