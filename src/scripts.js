@@ -19,7 +19,7 @@ userHydro.getHydroArray(sampleDate)
 
 $('.hydration__container--consumed--this--week').text(`${userHydro.getWeeklyHydroAvg()}`);
 
-$('.main__hydration__average--all-users').text(`${hydroRepo.getWeeklyAvgAllUsers()}`)
+$('.main__hydration__average--all-users').text(`${hydroRepo.getAvgAllUsers()}`)
 
 
 $('.sleep__container--hours--today').text(`${sleepyPerson.getStatsFromDay(sampleDate, 'hoursSlept')}`)

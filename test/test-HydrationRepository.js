@@ -29,8 +29,8 @@ describe('HydrationRepository', () => {
   { userID: 3, date: '2019/06/26', numOunces: 48 },
   { userID: 3, date: '2019/06/27', numOunces: 89 } ])
   });
-  it('should be able to calculate weekly avg for all users (oz drank)', () => {
+  it('should be able to calculate avg for all users (oz drank)', () => {
     const repo = new HydrationRepository(sampleHydration);
-    expect(repo.getWeeklyAvgAllUsers()).to.equal(61)
+    expect(repo.getAvgAllUsers()).to.equal(61)
   });
 })
