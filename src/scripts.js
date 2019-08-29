@@ -41,9 +41,9 @@ $('.activity__container--user--active--today').text(`${activePerson.getStatsFrom
 $('.activity__container--user--miles--today').text(`${activePerson.getMiles(sampleDate, 'numSteps')}`) 
 $('.activity__container--user--flights--today').text(`${activePerson.getStatsFromDay(sampleDate, 'flightsOfStairs')}`) 
 
-$('.activity__container--allusers--steps--today').text(`Steps Today: ${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'numSteps')}`)
-$('.activity__container--allusers--active--today').text(`Active Minutes Today: ${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'minutesActive')}`)
-$('.activity__container--allusers--flights--today').text(`${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'flightsOfStairs')} flights of stairs`)
+$('.activity__container--allusers--steps--today').text(`${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'numSteps')}`)
+$('.activity__container--allusers--active--today').text(`${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'minutesActive')}`)
+$('.activity__container--allusers--flights--today').text(`${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'flightsOfStairs')}`)
 
 
 let weekOfDates = sleepyPerson.getWeek(sampleDate).map(day => milisecondsToDate(day.date));

@@ -294,3 +294,8 @@ article {
 .space-under {
   margin-bottom: 30px;
 }
+
+.graph-titles {
+  margin-top: 15px;
+  margin-bottom: -15px;
+}
