@@ -304,15 +304,15 @@ var myChart = new Chart(threeDayStreak, {
   }
 });
 
-function displayFourteeners() {
-  let fourteeners = activePerson.findFourteeners();
-  if (fourteeners < 1) {
+function displayMileChallenge() {
+  let milesClimbed = activePerson.mileHighChallenge();
+  if (milesClimbed < 1) {
     message = 'Keep Climbing!'
   } else {
-    message = fourteeners
+    message = milesClimbed
   }
   $('.main__trends--14er').after(`<p class="fourteener--result"> ${message} </p>`)
 }
 
-displayFourteeners();
+displayMileChallenge();
 

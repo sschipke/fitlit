@@ -106,8 +106,10 @@ describe('Activity', () => {
   })
   
 
-  it('should return number of fourteeners climbed for all time', () => {
-    expect(activePerson.findFourteeners()).to.equal(`You're on your way. Keep Climbing!`)
+  it('should return number of miles climbed for all time', () => {
+    const testData = [{flightsOfStairs: 800}]
+    let newActivePerson = new Activity(testData, user)
+    expect(newActivePerson.mileHighChallenge()).to.equal(1)
   })
 
 })
