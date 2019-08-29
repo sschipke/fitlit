@@ -97,14 +97,17 @@ article {
   text-align: center;
 }
 
-
-
 .top-text {
   margin-top: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 27px;
   font-weight: 300;
 }
+
+.space-under {
+  margin-bottom: 30px;
+}
+
 .bottom-text {
   font-size: 20px;
   margin: 0;
@@ -289,13 +292,13 @@ article {
   border-right: 2px solid black;
 }
 
-.space-under {
-  margin-bottom: 30px;
-}
-
 .graph-titles {
   margin-top: 15px;
   margin-bottom: -15px;
+}
+
+.main__trends__article {
+  text-align: center;
 }
 
 @media screen and (max-width: 900px) {
