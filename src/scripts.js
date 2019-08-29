@@ -1,17 +1,17 @@
 
-const repo = new UserRepository(sampleData);
+const repo = new UserRepository(userData);
 const user = new User(repo.getUserData(getRandomNumber()))
   ;
-const hydroRepo = new HydrationRepository(sampleHydration);
+const hydroRepo = new HydrationRepository(hydrationData);
 const userHydro = new Hydration(hydroRepo.getUserData(user.id));
 
-const sleepRepo = new SleepRepository(sampleSleep);
+const sleepRepo = new SleepRepository(sleepData);
 const sleepyPerson = new Sleep(sleepRepo.getUserData(user.id));
 
-const activeRepo = new ActivityRepository(sampleActivity);
+const activeRepo = new ActivityRepository(activityData);
 const activePerson = new Activity(activeRepo.getUserData(user.id), user);
 
-const sampleDate = '2019/06/25'
+const sampleDate = '2019/08/29'
 
 const userName = user.getUserFirstName()
 $('.header__div-userName').text(`${userName}`);
@@ -27,7 +27,7 @@ userHydro.getHydroArray(sampleDate)
 $('.hydration__container--consumed--this--week').text(`${userHydro.getWeeklyHydroAvg()}`);
 
 
-$('.sleep__container--hours--today').text(`${sleepyPerson.getSleepHoursByDate(sampleDate)}`)
+$('.sleep__container--hours--today').text(`${sleepyPerson.getStatsFromDay(sampleDate, 'hoursSlept')}`)
 
 $('.sleep__container--hours--this--week').text(`Average hours slept this week: ${sleepyPerson.getWeeklyAvg(sampleDate, 'hoursSlept')} hours`)
 
@@ -360,7 +360,7 @@ function buildWeeklyHTML(unit) {
 }
 
 function getRandomNumber() {
-  return Math.floor(Math.random() * sampleData.length)
+  return Math.floor(Math.random() * userData.length)
 }
   
 function insertWeeklyStats(obj, unit) {
