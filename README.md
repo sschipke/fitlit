@@ -10,3 +10,8 @@ We built this application using HTML, CSS, and Javascript along with jQuery and 
 
 Our main goals with this project were to use ES6 classes, write dry modular JavaScript, practice and implement TDD and to manipulate and gather data using JavaScript array prototype methods.
 
+## Screenshots
+
+### Actual:
+  <img src="/src/images/fitLit_Desktop.jpg" alt="Fit Lit Desktop View">
+  <img src="/src/images/fitLit_mobile_iPhone5:SE..jpg" alt="Fit Lit Mobile View">
