@@ -1,34 +1,33 @@
 
-const repo = new UserRepository(sampleData);
-const user = new User(repo.getUserData(getRandomNumber()))
-  ;
-const hydroRepo = new HydrationRepository(sampleHydration);
+const repo = new UserRepository(userData);
+const user = new User(repo.getUserData(getRandomNumber()));
+const hydroRepo = new HydrationRepository(hydrationData);
 const userHydro = new Hydration(hydroRepo.getUserData(user.id));
-
-const sleepRepo = new SleepRepository(sampleSleep);
+const sleepRepo = new SleepRepository(sleepData);
 const sleepyPerson = new Sleep(sleepRepo.getUserData(user.id));
-
-const activeRepo = new ActivityRepository(sampleActivity);
+const activeRepo = new ActivityRepository(activityData);
 const activePerson = new Activity(activeRepo.getUserData(user.id), user);
 
-const sampleDate = '2019/06/25'
+function milisecondsToDate(miliseconds) {
+  return new Date(miliseconds).toString().slice(0, 10)
+}
 
-const userName = user.getUserFirstName()
-$('.header__div-userName').text(`${userName}`);
+function getRandomNumber() {
+  return Math.floor(Math.random() * userData.length)
+}
 
+const sampleDate = '2019/08/29'
+
+$('.header__div-userName').text(`${user.getUserFirstName()}`);
 $('.header__div__user-stepgoal').text(`${user.dailyStepGoal}`);
-
 $('.header__div__allusers-stepgoal').text(`${repo.getAllUsersAvgStepGoal()}`);
-
 $('.hydration__container--consumed--today').text(`${userHydro.userHydrationByDate(sampleDate)}`);
 
 userHydro.getHydroArray(sampleDate)
 
 $('.hydration__container--consumed--this--week').text(`${userHydro.getWeeklyHydroAvg()}`);
-
-
-$('.sleep__container--hours--today').text(`${sleepyPerson.getSleepHoursByDate(sampleDate)}`)
-
+$('.main__hydration__average--all-users').text(`${hydroRepo.getAvgAllUsers()}`)
+$('.sleep__container--hours--today').text(`${sleepyPerson.getStatsFromDay(sampleDate, 'hoursSlept')}`)
 $('.sleep__container--hours--this--week').text(`Average hours slept this week: ${sleepyPerson.getWeeklyAvg(sampleDate, 'hoursSlept')} hours`)
 
 $('.sleep--week--avg').after(`<p class="main__sleep__average--all-users">
@@ -39,21 +38,16 @@ $('.sleep--week--avg').after(`<p class="main__sleep__average--all-users">
             </p>`)
 
 $('.activity__container--user--steps--today').text(`Steps Today: ${activePerson.getStatsFromDay(sampleDate, 'numSteps')}`)
-
 $('.activity__container--user--active--today').text(`Active Minutes Today: ${activePerson.getStatsFromDay(sampleDate, 'minutesActive')}`)
-
 $('.activity__container--user--miles--today').text(`Miles walked Today: ${activePerson.getMiles(sampleDate, 'numSteps')} miles`) 
-
 $('.activity__container--allusers--steps--today').text(`Steps Today: ${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'numSteps')}`)
-
 $('.activity__container--allusers--active--today').text(`Active Minutes Today: ${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'minutesActive')}`)
-
 $('.activity__container--allusers--flights--today').text(`Flights climbed Today: ${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'flightsOfStairs')} flights of stairs`)
 
-const hydroChart = $('#hydroChart--thisWeek');
 
 let weekOfDates = sleepyPerson.getWeek(sampleDate).map(day => milisecondsToDate(day.date));
 
+const hydroChart = $('#hydroChart--thisWeek');
 
 var myChart = new Chart(hydroChart, {
   type: 'bar',
@@ -242,7 +236,7 @@ const compareFriendsSteps = () => {
   })
 }
 
-friend = compareFriendsSteps();
+compareFriendsSteps();
 
 const stepChallange = $('#step--challange')
 
@@ -321,49 +315,4 @@ function displayFourteeners() {
 }
 
 displayFourteeners();
-
-
-
-
-
-function buildWeeklyHTMLActivity() {
-  const weeklyMap = activePerson.getWeek(sampleDate).map(function (day) {
-    return insertWeeklyActivityStats(day)
-  })
-  return weeklyMap.join(' ');
-}
-
-function insertWeeklyActivityStats(obj) {
-  return `<p class="inserted--p"> ${milisecondsToDate(obj.date)}: <br> ${obj.numSteps} steps <br> ${obj.minutesActive} minutes active <br> ${obj.flightsOfStairs} flights of stairs </p>`
-}
-  
-function buildWeeklyHTMLSleep() {
-  const weeklyMap = sleepyPerson.getWeek(sampleDate).map(function (day) {
-    return insertWeeklySleepStats(day)
-  })
-  return weeklyMap.join(' ');
-}
-
-function insertWeeklySleepStats(obj) {
-  return `<p class="inserted--p"> ${milisecondsToDate(obj.date)}: ${obj.hoursSlept} hours slept with a sleep quality of ${obj.sleepQuality}  </p>`
-}
-
-function milisecondsToDate(miliseconds) {
-  return new Date(miliseconds).toString().slice(0, 10)
-}
-
-function buildWeeklyHTML(unit) {
-  const weeklyMap = userHydro.weeklyArr.map(function(day) {
-    return insertWeeklyStats(day, unit)
-  })
-  return weeklyMap.join(' ');
-}
-
-function getRandomNumber() {
-  return Math.floor(Math.random() * sampleData.length)
-}
-  
-function insertWeeklyStats(obj, unit) {
-  return `<p class="inserted--p"> ${milisecondsToDate(obj.date)}: ${obj.numOunces} ${unit} </p>`
-}
 
