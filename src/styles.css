@@ -3,12 +3,7 @@
 }
 
 html {
-   /* background: url("./src/images/abstract-design-diagonal-2387532.jpg") no-repeat;  */
   background-color: black;
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
 }
 
 
@@ -47,7 +42,6 @@ article {
 
 .header__div {
   align-items: center;
-  /* background-color: rgba(200, 200, 200, .7); */
   height: 10%;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -127,7 +121,6 @@ article {
   margin: 10px 0;
   display: flex;
   flex-direction: column;
-  /* background-color: rgba(200, 200, 200, .7); */
 }
 
 .main__hydration__article {
@@ -296,6 +289,11 @@ article {
   margin-top: 15px;
   margin-bottom: -15px;
 }
+.main__trends__article {
+  text-align: center;
+}
+
+/* *************************Media Query********************************/
 
 .main__trends__article {
   text-align: center;
