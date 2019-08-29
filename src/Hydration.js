@@ -24,7 +24,7 @@ class Hydration {
       total += day.numOunces;
       return total
     }, 0)
-    return Math.round(weekTotal/this.weeklyArr.length)
+    return Math.round(weekTotal / this.weeklyArr.length)
   }
 };
 
