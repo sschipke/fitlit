@@ -79,39 +79,40 @@
         <h3 class="main__sleep--h3 section-title">Sleep</h3>
         <article class="main__sleep__article--data">
           <container class="main__sleep--data--container weeklyHydro">
-            <h4 class="main__sleep--thisWeek sleep--week-byDay">This week:</h4>
+            <h4 class="main__sleep--thisWeek sleep--week-byDay top-text">Past Seven Days</h4>
             <div class="hydroChart-container" style="position: relative; width:98%">
               <canvas id="sleepChart--thisWeek"></canvas>
             </div>
           </container>
-
-
           <div class="main__sleep__div--user--group">
             <container class="main__sleep--data--container right--side--hydration flexBox-column">
-
-
               <p class="user-name"><span class="header__div-userName"> </span></p>
-
               <div class="flexBox-row">
-
-                <div class="main__sleep--data-div">
+                <div class="main__sleep--data-div" id="border-right">
                   <p class="top-text">Today</p>
                   <p class="sleep__container--hours--today top-nums">5</p>
-                  <p class="top-text bottom-text">HOURS</p>
+                  <p class="top-text bottom-text space-under">HOURS</p>
                   <p class="sleep__container--quality--today top-nums">3.2</p>
                   <p class="top-text bottom-text">SLEEP QUAL</p>
                 </div>
 
+
                 <div class="main__sleep--data-div">
-                  <p class="sleep__container--hours--this--week">Average hours slept this week: 6 hours</p>
-                  <p class="sleep__container--quality--this--week">Average quality slept this week: 4 SQ</p>
+                    <p class="top-text">This Week</p>
+                    <p class="sleep__container--hours--this--week top-nums">Average hours slept this week: 6 hours</p>
+                    <p class="top-text bottom-text space-under">HOURS</p>
+                    <p class="sleep__container--quality--this--week top-nums">4</p>
+                    <p class="top-text bottom-text">SLEEP QUAL</p>
                 </div>
               </div>
             </container>
-
-
             <container class="main__sleep--data--container right--side--hydration">
-              <h4 class="main__sleep--thisWeek sleep--week--avg"> Averages for Everyone This Week:</h4>
+              <p class="user-name">Everyone</p>
+              <h4 class="main__sleep--thisWeek top-text sleep--week--avg">Week Avg</h4>
+              <p class="sleep__container--hours--all--users top-nums">Average hours slept this week: 6 hours</p>
+              <p class="top-text bottom-text space-under">HOURS</p>
+              <p class="sleep__container--sleepQuality--all--users top-nums">Average hours slept this week: 6 hours</p>
+              <p class="top-text bottom-text">SLEEP QUAL</p>
             </container>
           </div>
         </article>
@@ -122,10 +123,16 @@
           <div class="activity-holder">
             <div class="user-activity">
               <container class="main__activity--user--steps--today--container">
-                <p class="activity__container--user--steps--today">Steps Today: 10,000</p>
-                <p class="activity__container--user--active--today">Active minutes today: 55 mins</p>
-                <p class="activity__container--user--miles--today">Miles walked today: 5 miles</p>
-                <p class="activity__container--user--flights--today">Flights climbed today: 3</p>
+                <p class="user-name"><span class="header__div-userName"> </span></p>
+                <p class="top-text">Today</p>
+                <p class="activity__container--user--steps--today top-nums">Steps Today: 10,000</p>
+                <p class="top-text bottom-text space-under">Steps</p>
+                <p class="activity__container--user--active--today top-nums">Active minutes today: 55 mins</p>
+                <p class="top-text bottom-text space-under">Active Minutes</p>
+                <p class="activity__container--user--miles--today top-nums">Miles walked today: 5 miles</p>
+                <p class="top-text bottom-text space-under">Miles Walked</p>
+                <p class="activity__container--user--flights--today top-nums">Flights climbed today: 3</p>
+                <p class="top-text bottom-text space-under">Flights Climbed</p>
               </container>
             </div>
             <div class="user-activity">
@@ -138,7 +145,7 @@
             </div>
           </div>
             <div class="allusers-activity--charts">
-              <h4 class="main__activity--thisWeek">This week:</h4>
+              <h4 class="main__activity--thisWeek top-text">Past Seven Days</h4>
               <canvas id="activitySteps--thisWeek" width="400" height="150"></canvas>
               <canvas id="activityFlights--thisWeek" width="400" height="150"></canvas>
               <canvas id="activityMins--thisWeek" width="400" height="150"></canvas>
