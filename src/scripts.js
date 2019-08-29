@@ -253,9 +253,15 @@ var myChart = new Chart(stepChallange, {
     datasets: [{
       label: 'steps',
       data: friends.map(friend => friend.steps),
-      // borderColor: [
-      //   'rgba(255, 99, 132, 1)'
-      // ],
+      backgroundColor: [
+        'rgba(102, 149, 232, 1)',
+        'rgba(102, 149, 232, 1)',
+        'rgba(102, 149, 232, 1)',
+        'rgba(102, 149, 232, 1)',
+        'rgba(102, 149, 232, 1)',
+        'rgba(102, 149, 232, 1)',
+        'rgba(102, 149, 232, 1)'
+      ],
       borderWidth: 1
     }]
   },
@@ -293,9 +299,15 @@ var myChart = new Chart(threeDayStreak, {
     datasets: [{
       label: 'steps',
       data: streak.map(day => day.numSteps),
-      // borderColor: [
-      //   'rgba(255, 99, 132, 1)'
-      // ],
+      backgroundColor: [
+        'rgba(255, 0, 0, 1)',
+        'rgba(255, 0, 0, 1)',
+        'rgba(255, 0, 0, 1)',
+        'rgba(255, 0, 0, 1)',
+        'rgba(255, 0, 0, 1)',
+        'rgba(255, 0, 0, 1)',
+        'rgba(255, 0, 0, 1)'
+      ],
       borderWidth: 1
     }]
   },
