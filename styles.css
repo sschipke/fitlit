@@ -13,7 +13,6 @@ html {
 
 
 body {
- 
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
@@ -201,7 +200,7 @@ article {
 }
 
 .flexBox-row {
-   display: flex;
+  display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: center;
@@ -323,10 +322,14 @@ article {
     width: 93%
   }
 
- 
+
   .main__hydration__div--user--group,
   .main__sleep__div--user--group,
   .activity-holder {
     width: 100%;
+  }
+
+  .graph-titles {
+    margin-bottom: 0;
   }
 }

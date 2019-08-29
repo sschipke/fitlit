@@ -322,15 +322,5 @@ var myChart = new Chart(threeDayStreak, {
   }
 });
 
-function displayMileChallenge() {
-  let milesClimbed = activePerson.mileHighChallenge();
-  if (milesClimbed < 1) {
-    message = 'Keep Climbing!'
-  } else {
-    message = milesClimbed
-  }
-  $('.main__trends--14er').after(`<p class="fourteener--result"> ${message} </p>`)
-}
-
-displayMileChallenge();
+$('.mile--high--number').text(activePerson.mileHighChallenge())
 
