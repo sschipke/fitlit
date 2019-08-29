@@ -73,16 +73,13 @@ class Activity {
     }, [])
   }
 
-  findFourteeners() {
+  mileHighChallenge() {
     let totalFlights = this.userData.reduce((total, day) => {
       total += day.flightsOfStairs
       return total
     }, 0)
-    let fourteeners = (totalFlights * 12) / 140000
-    if (fourteeners < 1) {
-      return `You're on your way. Keep Climbing!`
-    }
-    return parseInt(fourteeners)
+    let  miles = (totalFlights * 12) / 5280
+    return parseInt(miles)
   }
 
 

@@ -31,6 +31,8 @@ class SleepRepository {
     return weekOfData
   }
 
+
+
   createSleepQualityObj(dateToday) {
     return this.getWeekOfUsers(dateToday).reduce( (acc, user) => {
       if (!acc[user.userID]) {
@@ -38,6 +40,7 @@ class SleepRepository {
       } else {
         acc[user.userID].push(user.sleepQuality)
       }
+      console.log(acc)
       return acc
     }, {})
   }
