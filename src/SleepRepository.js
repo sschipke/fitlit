@@ -40,7 +40,6 @@ class SleepRepository {
       } else {
         acc[user.userID].push(user.sleepQuality)
       }
-      console.log(acc)
       return acc
     }, {})
   }
