@@ -83,7 +83,6 @@ article {
 }
 
 .header__div--greeting {
-  /* background-color: rgba(200, 200, 200, .7); */
   margin: 10px 0;
   display: flex;
   flex-direction: row;
@@ -298,4 +297,36 @@ article {
 .graph-titles {
   margin-top: 15px;
   margin-bottom: -15px;
+}
+
+@media screen and (max-width: 900px) {
+  .header__div,
+  .header__div--greeting,
+  .main__hydration__article--data,
+  .main__sleep__article--data,
+  .main__activity__article--data,
+  .main__trends-formater {
+    flex-direction: column;
+    align-content: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .header__div--container,
+  .main__hydration--data--container,
+  .main__sleep--data--container{
+    width: 93%;
+  }
+
+  .allusers-activity--charts,
+  .main__trends__article {
+    width: 93%
+  }
+
+ 
+  .main__hydration__div--user--group,
+  .main__sleep__div--user--group,
+  .activity-holder {
+    width: 100%;
+  }
 }
