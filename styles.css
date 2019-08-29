@@ -99,9 +99,7 @@ article {
   text-align: center;
 }
 
-#border-right {
-  border-right: 2px solid black;
-}
+
 
 .top-text {
   margin-top: 0;
@@ -200,11 +198,15 @@ article {
 .flexBox-column {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .flexBox-row {
    display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-content: stretch;
 }
 
 .main__activity__article--data {
@@ -219,6 +221,8 @@ article {
 
 .user-activity {
   flex: 1 1 auto;
+  text-align: center;
+  justify-content: center;
 }
 
 .allusers-activity--charts {
@@ -232,20 +236,28 @@ article {
 }
 
 .main__sleep {
-  /* background-color: rgba(200, 200, 200, .7); */
   grid-area: sleep;
   margin: 10px 0;
   display: flex;
   flex-direction: column;
 }
 
+
+
 .main__sleep--data-div{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
 
+.main__sleep--data--container{
+  text-align: center;
+}
+
+
+
 .main__activity {
-  /* background-color: rgba(200, 200, 200, .7); */
   grid-area: activity;
   margin: 10px 0;
   display: flex;
@@ -253,7 +265,6 @@ article {
 }
 
 .main__trends {
-  /* background-color: rgba(200, 200, 200, .7); */
   grid-area: trends;
   margin: 10px 0;
   display: flex;
@@ -274,4 +285,12 @@ article {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+}
+
+#border-right {
+  border-right: 2px solid black;
+}
+
+.space-under {
+  margin-bottom: 30px;
 }

@@ -28,21 +28,22 @@ userHydro.getHydroArray(sampleDate)
 $('.hydration__container--consumed--this--week').text(`${userHydro.getWeeklyHydroAvg()}`);
 $('.main__hydration__average--all-users').text(`${hydroRepo.getAvgAllUsers()}`)
 $('.sleep__container--hours--today').text(`${sleepyPerson.getStatsFromDay(sampleDate, 'hoursSlept')}`)
-$('.sleep__container--hours--this--week').text(`Average hours slept this week: ${sleepyPerson.getWeeklyAvg(sampleDate, 'hoursSlept')} hours`)
+$('.sleep__container--hours--this--week').text(`${sleepyPerson.getWeeklyAvg(sampleDate, 'hoursSlept')}`)
 
-$('.sleep--week--avg').after(`<p class="main__sleep__average--all-users">
-              Hours slept this week: ${sleepRepo.getAvgSleepStatsAllUsers(sleepRepo.getWeekOfUsers(sampleDate), 'hoursSlept')} hours
-            </p>
-            <p class="main__sleep__average--all-users">
-              Sleep quality this week: ${sleepRepo.getAvgSleepStatsAllUsers(sleepRepo.getWeekOfUsers(sampleDate), 'sleepQuality')}
-            </p>`)
+$('.sleep__container--hours--all--users').text(
+  sleepRepo.getAvgSleepStatsAllUsers(sleepRepo.getWeekOfUsers(sampleDate), 'hoursSlept'))
 
-$('.activity__container--user--steps--today').text(`Steps Today: ${activePerson.getStatsFromDay(sampleDate, 'numSteps')}`)
-$('.activity__container--user--active--today').text(`Active Minutes Today: ${activePerson.getStatsFromDay(sampleDate, 'minutesActive')}`)
-$('.activity__container--user--miles--today').text(`Miles walked Today: ${activePerson.getMiles(sampleDate, 'numSteps')} miles`) 
+$('.sleep__container--sleepQuality--all--users').text(
+  sleepRepo.getAvgSleepStatsAllUsers(sleepRepo.getWeekOfUsers(sampleDate), 'sleepQuality'))
+
+$('.activity__container--user--steps--today').text(`${activePerson.getStatsFromDay(sampleDate, 'numSteps')}`)
+$('.activity__container--user--active--today').text(`${activePerson.getStatsFromDay(sampleDate, 'minutesActive')}`)
+$('.activity__container--user--miles--today').text(`${activePerson.getMiles(sampleDate, 'numSteps')}`) 
+$('.activity__container--user--flights--today').text(`${activePerson.getStatsFromDay(sampleDate, 'flightsOfStairs')}`) 
+
 $('.activity__container--allusers--steps--today').text(`Steps Today: ${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'numSteps')}`)
 $('.activity__container--allusers--active--today').text(`Active Minutes Today: ${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'minutesActive')}`)
-$('.activity__container--allusers--flights--today').text(`Flights climbed Today: ${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'flightsOfStairs')} flights of stairs`)
+$('.activity__container--allusers--flights--today').text(`${activeRepo.getAvgActivityStatsAllUsers(sampleDate, 'flightsOfStairs')} flights of stairs`)
 
 
 let weekOfDates = sleepyPerson.getWeek(sampleDate).map(day => milisecondsToDate(day.date));
