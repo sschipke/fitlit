@@ -1,10 +1,25 @@
 
+const UserRepository = module.require('UserRepository');
+const userData = module.require('userData')
+const User = module.require('User')
 const repo = new UserRepository(userData);
 const user = new User(repo.getUserData(getRandomNumber()));
+
+const HydrationRepository = module.require('HydrationRepository');
+const hydrationData = module.require('hydrationData');
+const Hydration = module.require('Hydration');
 const hydroRepo = new HydrationRepository(hydrationData);
 const userHydro = new Hydration(hydroRepo.getUserData(user.id));
+
+const SleepRepository = module.require('SleepRepository');
+const sleepData = module.require('sleepDaya');
+const Sleep = module.require('Sleep');
 const sleepRepo = new SleepRepository(sleepData);
 const sleepyPerson = new Sleep(sleepRepo.getUserData(user.id));
+
+const ActivityRepository = module.require('ActivityRepository');
+const activityData = module.require('activityData');
+const Activity = module.require('Activity');
 const activeRepo = new ActivityRepository(activityData);
 const activePerson = new Activity(activeRepo.getUserData(user.id), user);
 

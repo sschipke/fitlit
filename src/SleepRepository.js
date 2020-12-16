@@ -1,4 +1,4 @@
-class SleepRepository {
+export class SleepRepository {
   constructor(data) {
     this.data =  data.map(obj => {
       const date = new Date(obj.date)
