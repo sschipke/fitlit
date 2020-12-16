@@ -1,7 +1,7 @@
 
 const UserRepository = module.require('UserRepository');
-const userData = module.require('userData')
-const User = module.require('User')
+const userData = module.require('userData');
+const User = module.require('User');
 const repo = new UserRepository(userData);
 const user = new User(repo.getUserData(getRandomNumber()));
 

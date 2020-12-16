@@ -1,4 +1,4 @@
-export class UserRepository {
+class UserRepository {
   constructor(data) {
     this.data = data;
     this.length = this.data.length
