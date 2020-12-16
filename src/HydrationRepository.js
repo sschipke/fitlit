@@ -1,4 +1,4 @@
-export class HydrationRepository { 
+class HydrationRepository { 
   constructor(data) {
     this.data = data
   }

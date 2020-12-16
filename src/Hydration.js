@@ -1,4 +1,4 @@
-export class Hydration {
+class Hydration {
   constructor(userData) {
     this.userData = userData;
     this.weeklyArr;

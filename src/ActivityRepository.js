@@ -1,5 +1,5 @@
 
-export class ActivityRepository {
+class ActivityRepository {
   constructor(data) {
     this.data = data.map(obj => {
       const date = new Date(obj.date)
