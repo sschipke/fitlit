@@ -1,5 +1,5 @@
 
-class ActivityRepository {
+export class ActivityRepository {
   constructor(data) {
     this.data = data.map(obj => {
       const date = new Date(obj.date)
@@ -24,7 +24,7 @@ class ActivityRepository {
   getAvgActivityStatsAllUsers(date, property) {
     const targetDate = this.changeTimeFormat(date);
     const dataByDate = this.data.filter(day => {
-      if(day.date === targetDate) {
+      if (day.date === targetDate) {
         return day;
       }
     })

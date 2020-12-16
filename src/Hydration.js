@@ -1,4 +1,4 @@
-class Hydration {
+export class Hydration {
   constructor(userData) {
     this.userData = userData;
     this.weeklyArr;
@@ -6,7 +6,7 @@ class Hydration {
 
   userTotalAvgOz() {
     const total =  this.userData.reduce((acc, user) => acc += user.numOunces, 0);
-    return Math.round(total/this.userData.length)
+    return Math.round(total / this.userData.length)
   }
 
   userHydrationByDate(date) {
@@ -26,7 +26,7 @@ class Hydration {
     }, 0)
     return Math.round(weekTotal / this.weeklyArr.length)
   }
-};
+}
 
 
 

@@ -1,4 +1,4 @@
-class Activity {
+export class Activity {
   constructor(data, user) {
     this.name = user.name
     this.userData = data;

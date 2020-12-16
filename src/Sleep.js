@@ -1,4 +1,4 @@
-class Sleep {
+export class Sleep {
   constructor(userData) {
     this.userData = userData;
   }

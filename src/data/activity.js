@@ -1,4 +1,4 @@
-const activityData = [
+export const activityData = [
   {
     "userID": 1,
     "date": "2019/06/15",
