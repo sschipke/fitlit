@@ -1,5 +1,8 @@
 # FitLit 
 
+## Live Site
+You can find the live site on [GitHubPages](https://sschipke.github.io/fitlit/) or [Netlify](https://fitlit-ss.netlify.app/)
+
 ## Matthew Malone and Scott Schipke
 
 This is a partner project for Mod 2 of the Front En Engineering program for Turing School of Software and Design.
